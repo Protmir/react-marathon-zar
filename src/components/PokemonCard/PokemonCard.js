@@ -1,4 +1,4 @@
-import {useState, React}  from 'react'
+import { useState, React }  from 'react'
 
 
 import cardBackSide from './assets/card-back-side.jpg'

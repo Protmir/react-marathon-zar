@@ -6,7 +6,7 @@ import bgImage1 from './Image/bg3.jpg'
 import bgImage2 from './Image/bg1.jpg'
 
 import POKEMON from './POKEMON.json'
-import PokemonCard from "./components/PokemonCard/PokemonCard";
+import PokemonCard from './components/PokemonCard/PokemonCard';
 
 
 function App() {

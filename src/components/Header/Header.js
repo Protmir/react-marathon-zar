@@ -1,6 +1,6 @@
 import React from 'react'
 
-import style from "./Header.module.css"
+import style from './Header.module.css'
 
 const Header = props => (
     <header className={style.root}>
