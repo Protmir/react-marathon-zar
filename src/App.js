@@ -1,16 +1,47 @@
 import './App.css';
-import Header from "./components/Header/Header";
-import Layout from "./components/Layout/Layout";
-import Footer from "./components/Footer/Footer";
-import bgImage from "./Image/bg3.jpg"
+import Header from './components/Header/Header'
+import Layout from './components/Layout/Layout'
+import Footer from './components/Footer/Footer'
+import bgImage1 from './Image/bg3.jpg'
+import bgImage2 from './Image/bg1.jpg'
+
+import POKEMON from './POKEMON.json'
+import PokemonCard from "./components/PokemonCard/PokemonCard";
+
 
 function App() {
   return (
       <>
         <Header title="This new title!"  discr="This new Description!"/>
-        <Layout title="This new Layout1 title!"  discr="This new Layout1 Description!" id={1} urlBg={bgImage}/>
-        <Layout title="This new Layout2 title!"  discr="This new Layout2 Description!" id={2}/>
-        <Layout title="This new Layout3 title!"  discr="This new Layout3 Description!" id={3} colorBg="red"/>
+        <Layout
+            title="Rules"
+            id="rules"
+            urlBg={bgImage1}
+        >
+            <p>In the game two players face off against one another, one side playing as "blue", the other as "red" on a 3x3 grid.
+                Each player has five cards in a hand and the aim is to capture the opponent's cards by turning them into the player's own color of red or blue.</p>
+            <p>To win, a majority of the total ten cards played (including the one card that is not placed on the board) must be of the player's card color. To do this, the player must capture cards by placing a card adjacent to an opponent's card whereupon the 'ranks' of the sides where the two cards touch will be compared. If the rank of the opponent's card is higher than the player's card, the player's card will be captured and turned into the opponent's color. If the player's rank is higher, the opponent's card will be captured and changed into the player's color instead. </p>
+        </Layout>
+        <Layout
+            title="Cards!"
+            id="cards"
+            colorBg="#202736"
+        >
+            <div className="flex">
+                {
+                    POKEMON.map((item) => <PokemonCard key={item.id} {...item} />)
+                }
+            </div>
+        </Layout>
+        <Layout
+            title="Full Rules"
+            id="about"
+            urlBg={bgImage2}
+        >
+            <p>In the game two players face off against one another, one side playing as "blue", the other as "red" on a 3x3 grid.
+                Each player has five cards in a hand and the aim is to capture the opponent's cards by turning them into the player's own color of red or blue.</p>
+            <p>To win, a majority of the total ten cards played (including the one card that is not placed on the board) must be of the player's card color. To do this, the player must capture cards by placing a card adjacent to an opponent's card whereupon the 'ranks' of the sides where the two cards touch will be compared. If the rank of the opponent's card is higher than the player's card, the player's card will be captured and turned into the opponent's color. If the player's rank is higher, the opponent's card will be captured and changed into the player's color instead. </p>
+        </Layout>
         <Footer />
       </>
   )
